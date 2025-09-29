@@ -1,0 +1,105 @@
+{
+  "name": "code-rhapsodie/connector-mistral",
+  "description": "Connector for Mistral in Ibexa",
+  "license": "MIT",
+  "type": "ibexa-bundle",
+  "keywords": [
+    "ibexa-dxp",
+    "ibexa",
+    "ia",
+    "Mistral",
+    "ai"
+  ],
+  "authors": [
+    {
+      "name": "Jean-Baptiste Nahan",
+      "email": "jean-baptiste@code-rhapsodie.fr",
+      "role": "Developer"
+    },
+    {
+      "name": "Loïc A.",
+      "email": "loic@code-rhapsodie.fr",
+      "role": "Developer"
+    },
+    {
+      "name": "Code Rhapsodie",
+      "homepage": "https://www.code-rhapsodie.fr/"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://updates.ibexa.co"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "ext-json": "*",
+    "ibexa/connector-ai": "~5.0",
+    "ibexa/core-search": "~5.0",
+    "symfony/config": "^7.3",
+    "symfony/dependency-injection": "^7.3",
+    "symfony/http-foundation": "^7.3",
+    "symfony/http-kernel": "^7.3",
+    "symfony/http-client-contracts": "^3.6",
+    "symfony/http-client": "^7.3",
+    "symfony/yaml": "^7.3"
+  },
+  "require-dev": {
+    "dama/doctrine-test-bundle": "^v8.2",
+    "ibexa/admin-ui": "~5.0",
+    "ibexa/code-style": "~2.0.0",
+    "ibexa/content-forms": "~5.0",
+    "ibexa/core": "~5.0",
+    "ibexa/core-persistence": "~5.0",
+    "ibexa/doctrine-schema": "~5.0",
+    "ibexa/fieldtype-richtext": "~5.0",
+    "ibexa/graphql": "~5.0",
+    "ibexa/installer": "~5.0",
+    "ibexa/migrations": "~5.0",
+    "ibexa/personalization": "~5.0",
+    "ibexa/product-catalog": "~5.0",
+    "ibexa/rest": "~5.0",
+    "ibexa/scheduler": "~5.0",
+    "ibexa/search": "~5.0",
+    "ibexa/taxonomy": "~5.0",
+    "ibexa/test-core": "~5.0-dev",
+    "ibexa/twig-components": "~5.0",
+    "ibexa/version-comparison": "~5.0",
+    "matthiasnoback/symfony-dependency-injection-test": "^5.0",
+    "phpstan/phpstan": "^2.0",
+    "phpstan/phpstan-phpunit": "^2.0",
+    "phpstan/phpstan-symfony": "^2.0",
+    "phpunit/phpunit": "^9",
+    "qossmic/deptrac-shim": "^0.24.0 || ^1.0.2",
+    "rector/rector": "^2.1"
+  },
+  "scripts": {
+    "fix-cs": "php-cs-fixer fix --config=.php-cs-fixer.php --show-progress=dots --allow-risky=yes",
+    "check-cs": "@fix-cs --dry-run",
+    "test": "phpunit -c phpunit.xml.dist",
+    "test-integration": "phpunit -c phpunit.integration.xml",
+    "phpstan": "phpstan analyse -c phpstan.neon",
+    "deptrac": "php vendor/bin/deptrac analyse"
+  },
+  "autoload": {
+    "psr-4": {
+      "CodeRhapsodie\\Bundle\\ConnectorMistral\\": "src/bundle/",
+      "CodeRhapsodie\\Contracts\\ConnectorMistral\\": "src/contracts/",
+      "CodeRhapsodie\\ConnectorMistral\\": "src/lib/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "CodeRhapsodie\\Tests\\Bundle\\ConnectorMistral\\": "tests/bundle/",
+      "CodeRhapsodie\\Tests\\Integration\\ConnectorMistral\\": "tests/integration/",
+      "CodeRhapsodie\\Tests\\ConnectorMistral\\": "tests/lib/"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "php-http/discovery": true
+    }
+  }
+}

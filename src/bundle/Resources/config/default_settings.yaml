@@ -1,0 +1,2 @@
+parameters:
+    ibexa.site_access.config.default.connector_mistral.mistral.api_key: '%env(MISTRAL_API_KEY)%'

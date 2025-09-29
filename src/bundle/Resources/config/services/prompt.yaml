@@ -1,0 +1,29 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    CodeRhapsodie\ConnectorMistral\ActionHandler\ImageToTextPromptFactory:
+        class:   Ibexa\Contracts\ConnectorAi\Prompt\PromptFactory
+        arguments:
+            $prompts:
+                - '@Ibexa\ConnectorAi\Prompt\BasePrompt'
+                - '@Ibexa\ConnectorAi\Prompt\LanguagePrompt'
+                - '@Ibexa\ConnectorAi\Prompt\LengthPrompt'
+                - '@Ibexa\ConnectorAi\Prompt\AdditionalPrompt'
+            $identifier: 'mistral-image-to-text'
+        tags:
+            - { name: ibexa.ai.prompt_factory, key: 'mistral-image-to-text' }
+
+    CodeRhapsodie\ConnectorMistral\ActionHandler\TextToTextPromptFactory:
+        class:   Ibexa\Contracts\ConnectorAi\Prompt\PromptFactory
+        arguments:
+            $prompts:
+                - '@Ibexa\ConnectorAi\Prompt\BasePrompt'
+                - '@Ibexa\ConnectorAi\Prompt\LanguagePrompt'
+                - '@Ibexa\ConnectorAi\Prompt\AdditionalPrompt'
+                - '@Ibexa\ConnectorAi\Prompt\ActionInputTextPrompt'
+            $identifier: 'mistral-text-to-text'
+        tags:
+            - { name: ibexa.ai.prompt_factory, key: 'mistral-text-to-text' }

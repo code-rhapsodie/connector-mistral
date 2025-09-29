@@ -1,0 +1,31 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    ibexa.connector_ai.action_configuration.options.mistral_image_to_text_compound_validator:
+        class: Ibexa\ConnectorAi\Validation\Validator\CompoundValidator
+        arguments:
+            $validators: !tagged_iterator { tag: 'ibexa.connector_ai.action_configuration.options.validator.mistral_image_to_text' }
+        tags:
+            -   name: ibexa.connector_ai.action_configuration.options.validator
+                type: mistral-image-to-text
+
+    ibexa.connector_ai.action_configuration.options.mistral_text_to_text_compound_validator:
+        class: Ibexa\ConnectorAi\Validation\Validator\CompoundValidator
+        arguments:
+            $validators: !tagged_iterator { tag: 'ibexa.connector_ai.action_configuration.options.validator.mistral_text_to_text' }
+        tags:
+            -   name: ibexa.connector_ai.action_configuration.options.validator
+                type: mistral-text-to-text
+
+    CodeRhapsodie\ConnectorMistral\Validation\Validator\MaxTokensValidator:
+        tags:
+            -   name: ibexa.connector_ai.action_configuration.options.validator.mistral_image_to_text
+            -   name: ibexa.connector_ai.action_configuration.options.validator.mistral_text_to_text
+
+    CodeRhapsodie\ConnectorMistral\Validation\Validator\TemperatureValidator:
+        tags:
+            -   name: ibexa.connector_ai.action_configuration.options.validator.mistral_image_to_text
+            -   name: ibexa.connector_ai.action_configuration.options.validator.mistral_text_to_text

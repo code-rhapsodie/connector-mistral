@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    CodeRhapsodie\ConnectorMistral\ClientProvider: ~
+
+    CodeRhapsodie\Contracts\ConnectorMistral\ClientProviderInterface:
+        '@CodeRhapsodie\ConnectorMistral\ClientProvider'
