@@ -28,7 +28,7 @@ MISTRAL_API_KEY=your-google-mistral-api-key-here
 
 ### Step 4: Import generic IA Action migration
 ```bash
-  php bin/console ibexa:migrations:import vendor/code-rhapsodie/connector-mistral/src/bundle/Resources/migrations/action_configurations.yaml
+  php bin/console ibexa:migrations:import vendor/code-rhapsodie/connector-mistral/src/bundle/Resources/migrations/mistral_action_configurations.yaml
 ```
 
 ### Step 5: Execute Ibexa migration

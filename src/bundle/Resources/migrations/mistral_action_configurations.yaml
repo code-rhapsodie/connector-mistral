@@ -1,6 +1,6 @@
 -   type: action_configuration
     mode: create
-    identifier: gen_alt_text
+    identifier: mistral_gen_alt_text
     enabled: true
     names:
         'eng-GB': 'Generate alternative text'
@@ -18,7 +18,7 @@
 
 -   type: action_configuration
     mode: create
-    identifier: improve_readability
+    identifier: mistral_improve_readability
     enabled: true
     names:
         'eng-GB': 'Improve readability'
@@ -35,7 +35,7 @@
 
 -   type: action_configuration
     mode: create
-    identifier: proofread
+    identifier: mistral_proofread
     enabled: true
     names:
         'eng-GB': 'Proofread'
@@ -52,7 +52,7 @@
 
 -   type: action_configuration
     mode: create
-    identifier: shorten_text
+    identifier: mistral_shorten_text
     enabled: true
     names:
         'eng-GB': 'Shorten text'
@@ -69,7 +69,7 @@
 
 -   type: action_configuration
     mode: create
-    identifier: expand_text
+    identifier: mistral_expand_text
     enabled: true
     names:
         'eng-GB': 'Expand text'
@@ -86,7 +86,7 @@
 
 -   type: action_configuration
     mode: create
-    identifier: summarize_text
+    identifier: mistral_summarize_text
     enabled: true
     names:
         'eng-GB': 'Summarize'
@@ -103,7 +103,7 @@
 
 -   type: action_configuration
     mode: create
-    identifier: rewrite_with_professional_tone
+    identifier: mistral_rewrite_with_professional_tone
     enabled: true
     names:
         'eng-GB': 'Rewrite in professional tone'
@@ -120,7 +120,7 @@
 
 -   type: action_configuration
     mode: create
-    identifier: rewrite_with_friendly_tone
+    identifier: mistral_rewrite_with_friendly_tone
     enabled: true
     names:
         'eng-GB': 'Rewrite in friendly tone'
