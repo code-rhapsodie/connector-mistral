@@ -45,15 +45,18 @@ final class TextToTextActionHandler extends AbstractActionHandler
 
         $data = $this->client->generate(
             [
-                $this->promptResolver->getPrompt($options),
+                [
+                    'role' => 'user',
+                    'content' => $this->promptResolver->getPrompt($options),
+                ]
             ],
             [
                 'model' => $options['model'],
                 'temperature' => $options['temperature'],
-                'top_p' => 1,
                 'max_tokens' => $options['max_tokens'],
                 'safe_prompt' => false,
                 'random_seed' => null,
+                'stream'=> false,
                 'response_format' => [
                     'type' => 'json_object'
                 ]

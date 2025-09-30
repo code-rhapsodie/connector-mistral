@@ -15,10 +15,10 @@ trait ResponseFormatter
      */
     public function format(array $data): array
     {
-        if (!isset($data['candidates'][0]['content']['parts'][0]['text'])) {
+        if (!isset($data['choices'][0]['message']['content'])) {
             throw new RuntimeException('Unable to create response from response data.');
         }
 
-        return [$data['candidates'][0]['content']['parts'][0]['text']];
+        return [$data['choices'][0]['message']['content']];
     }
 }

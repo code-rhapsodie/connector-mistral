@@ -2,6 +2,9 @@
 
 The code-rhapsodie/connector-mistral bundle integrates Mistral into Ibexa DXP, enabling AI-assisted content generation and editing capabilities directly from the Ibexa Back Office.
 
+> **NOTE** This Mistral AI connector is experimental and may not be suitable for production use.
+> Use at your own risk.
+
 ## Installation
 
 ### Step 1: Install the bundle via composer
@@ -23,7 +26,7 @@ return [
 ```dotenv
 #.env
 
-MISTRAL_API_KEY=your-google-mistral-api-key-here
+MISTRAL_API_KEY=your-mistral-api-key-here
 ```
 
 ### Step 4: Import generic IA Action migration
