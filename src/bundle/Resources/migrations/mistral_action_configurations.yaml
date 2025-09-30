@@ -3,7 +3,7 @@
     identifier: mistral_gen_alt_text
     enabled: true
     names:
-        'eng-GB': 'Generate alternative text'
+        'eng-GB': 'Generate alternative text with Mistral'
     descriptions:
         'eng-GB': ''
     action_handler_identifier: mistral-image-to-text
@@ -21,7 +21,7 @@
     identifier: mistral_improve_readability
     enabled: true
     names:
-        'eng-GB': 'Improve readability'
+        'eng-GB': 'Improve readability with Mistral'
     descriptions:
         'eng-GB': ''
     action_handler_identifier: mistral-text-to-text
@@ -38,7 +38,7 @@
     identifier: mistral_proofread
     enabled: true
     names:
-        'eng-GB': 'Proofread'
+        'eng-GB': 'Proofread with Mistral'
     descriptions:
         'eng-GB': ''
     action_handler_identifier: mistral-text-to-text
@@ -55,7 +55,7 @@
     identifier: mistral_shorten_text
     enabled: true
     names:
-        'eng-GB': 'Shorten text'
+        'eng-GB': 'Shorten text with Mistral'
     descriptions:
         'eng-GB': ''
     action_handler_identifier: mistral-text-to-text
@@ -72,7 +72,7 @@
     identifier: mistral_expand_text
     enabled: true
     names:
-        'eng-GB': 'Expand text'
+        'eng-GB': 'Expand text with Mistral'
     descriptions:
         'eng-GB': ''
     action_handler_identifier: mistral-text-to-text
@@ -89,7 +89,7 @@
     identifier: mistral_summarize_text
     enabled: true
     names:
-        'eng-GB': 'Summarize'
+        'eng-GB': 'Summarize with Mistral'
     descriptions:
         'eng-GB': ''
     action_handler_identifier: mistral-text-to-text
@@ -106,7 +106,7 @@
     identifier: mistral_rewrite_with_professional_tone
     enabled: true
     names:
-        'eng-GB': 'Rewrite in professional tone'
+        'eng-GB': 'Rewrite in professional tone with Mistral'
     descriptions:
         'eng-GB': ''
     action_handler_identifier: mistral-text-to-text
@@ -123,7 +123,7 @@
     identifier: mistral_rewrite_with_friendly_tone
     enabled: true
     names:
-        'eng-GB': 'Rewrite in friendly tone'
+        'eng-GB': 'Rewrite in friendly tone with Mistral'
     descriptions:
         'eng-GB': ''
     action_handler_identifier: mistral-text-to-text
