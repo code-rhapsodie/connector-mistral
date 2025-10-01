@@ -5,7 +5,7 @@ declare(strict_types=1);
 
 namespace CodeRhapsodie\ConnectorMistral\ActionHandler;
 
-use CodeRhapsodie\Bundle\ConnectorMistral\Client\MistralClient;
+use CodeRhapsodie\Bundle\ConnectorMistral\Client\AiClientInterface;
 use CodeRhapsodie\Contracts\ConnectorMistral\ClientProviderInterface;
 use Ibexa\Contracts\ConnectorAi\Action\ActionHandlerInterface;
 use Ibexa\Contracts\ConnectorAi\Action\LLMBaseActionTypeInterface;
@@ -22,7 +22,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 abstract class AbstractActionHandler implements ActionHandlerInterface
 {
-    protected MistralClient $client;
+    protected AiClientInterface $client;
 
     protected string $defaultModel = 'mistral-2.0-flash';
 

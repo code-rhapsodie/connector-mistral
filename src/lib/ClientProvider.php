@@ -5,10 +5,10 @@ declare(strict_types=1);
 
 namespace CodeRhapsodie\ConnectorMistral;
 
+use CodeRhapsodie\Bundle\ConnectorMistral\Client\AiClientInterface;
 use CodeRhapsodie\Bundle\ConnectorMistral\Client\MistralClient;
 use CodeRhapsodie\Contracts\ConnectorMistral\ClientProviderInterface;
 use Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface;
-use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 final readonly class ClientProvider implements ClientProviderInterface
@@ -19,7 +19,7 @@ final readonly class ClientProvider implements ClientProviderInterface
     ) {
     }
 
-    public function getClient(): MistralClient
+    public function getClient(): AiClientInterface
     {
         $client = $this->httpClient->withOptions([
             'base_uri'=>'https://api.mistral.ai',
