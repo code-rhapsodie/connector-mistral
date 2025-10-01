@@ -51,15 +51,11 @@ final class ImageToTextActionHandlerTest extends AbstractActionHandlerTest
         );
 
         $client = $this->createMock(AiClientInterface::class);
-        $client->method('generate')->willReturnCallback([
-            'candidates' => [
+        $client->method('generate')->willReturn([
+            'choices' => [
                 [
-                    'content' => [
-                        'parts' => [
-                            [
-                                'text' => 'foo',
-                            ],
-                        ],
+                    'message' => [
+                        'content' => 'foo',
                     ],
                 ],
             ],

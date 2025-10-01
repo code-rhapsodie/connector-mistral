@@ -24,6 +24,7 @@ final class MistralClient implements AiClientInterface
     {
     }
 
+    /** {@inheritDoc} */
     public function generate(array $prompts, array $config): array
     {
         $response = $this->client->request('POST', '/v1/chat/completions', [
