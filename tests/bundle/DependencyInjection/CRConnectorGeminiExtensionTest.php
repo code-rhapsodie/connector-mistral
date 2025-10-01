@@ -27,18 +27,19 @@ final class CRConnectorMistralExtensionTest extends AbstractExtensionTestCase
         $this->assertParameter([
             'mistral-medium-latest' => 'Mistral Medium',
             'mistral-small-latest' => 'Mistral Small',
+            'mistral-large-latest' => 'Mistral Large',
         ], 'text_to_text', 'models');
         $this->assertParameter('mistral-small-latest', 'text_to_text', 'default_model');
         $this->assertParameter(4096, 'text_to_text', 'default_max_tokens');
-        $this->assertParameter(1.0, 'text_to_text', 'default_temperature');
+        $this->assertParameter(0.8, 'text_to_text', 'default_temperature');
 
         $this->assertParameter([
-            'mistral-medium-latest' => 'Mistral Medium',
-            'mistral-small-latest' => 'Mistral Small',
+            'mistral-ocr-latest' => 'Mistral OCR',
+            'magistral-medium-latest' => 'Magistral Medium',
         ], 'image_to_text', 'models');
         $this->assertParameter('mistral-small-latest', 'image_to_text', 'default_model');
         $this->assertParameter(4096, 'image_to_text', 'default_max_tokens');
-        $this->assertParameter(1.0, 'image_to_text', 'default_temperature');
+        $this->assertParameter(0.8, 'image_to_text', 'default_temperature');
     }
 
     public function testCustomConfiguration(): void
@@ -56,6 +57,7 @@ final class CRConnectorMistralExtensionTest extends AbstractExtensionTestCase
                 'models' => [
                     'mistral-medium-latest' => 'Mistral Medium',
                     'mistral-small-latest' => 'Mistral Small',
+                    'mistral-large-latest' => 'Mistral Large',
                 ],
                 'default_model' => 'mistral-small-latest',
                 'default_max_tokens' => 2048,
@@ -73,6 +75,7 @@ final class CRConnectorMistralExtensionTest extends AbstractExtensionTestCase
         $this->assertParameter([
             'mistral-medium-latest' => 'Mistral Medium',
             'mistral-small-latest' => 'Mistral Small',
+            'mistral-large-latest' => 'Mistral Large',
         ], 'image_to_text', 'models');
         $this->assertParameter('mistral-small-latest', 'image_to_text', 'default_model');
         $this->assertParameter(2048, 'image_to_text', 'default_max_tokens');
