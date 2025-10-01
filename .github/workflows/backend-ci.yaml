@@ -28,8 +28,8 @@ jobs:
 
             -   name: Add composer keys for private packagist
                 run: |
-                    composer config -a http-basic.updates.ibexa.co $IBEXA_KEY $IBEXA_TOKEN
-                    composer config -a github-oauth.github.com $GITHUB_TOKEN
+                    composer config http-basic.updates.ibexa.co $IBEXA_KEY $IBEXA_TOKEN
+                    composer config github-oauth.github.com $GITHUB_TOKEN
                 env:
                     IBEXA_KEY: ${{ secrets.IBEXA_KEY }}
                     IBEXA_TOKEN: ${{ secrets.IBEXA_TOKEN }}
