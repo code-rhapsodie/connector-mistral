@@ -4,7 +4,9 @@ services:
         autoconfigure: true
         public: false
 
-    CodeRhapsodie\ConnectorMistral\ClientProvider: ~
+    CodeRhapsodie\ConnectorMistral\ClientProvider:
+      arguments:
+        $clientClassname: '%code_rhapsodie.connector_mistral.client.classname%'
 
     CodeRhapsodie\Contracts\ConnectorMistral\ClientProviderInterface:
         '@CodeRhapsodie\ConnectorMistral\ClientProvider'

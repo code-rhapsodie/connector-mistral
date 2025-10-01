@@ -5,7 +5,6 @@ declare(strict_types=1);
 
 namespace CodeRhapsodie\ConnectorMistral;
 
-use CodeRhapsodie\Bundle\ConnectorMistral\Client\MistralClient;
 use CodeRhapsodie\Contracts\ConnectorMistral\AiClientInterface;
 use CodeRhapsodie\Contracts\ConnectorMistral\ClientProviderInterface;
 use Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface;
@@ -15,7 +14,8 @@ final readonly class ClientProvider implements ClientProviderInterface
 {
     public function __construct(
         private ConfigResolverInterface $configResolver,
-        private HttpClientInterface $httpClient
+        private HttpClientInterface $httpClient,
+        private string $clientClassname,
     ) {
     }
 
@@ -30,6 +30,10 @@ final readonly class ClientProvider implements ClientProviderInterface
             ]
         ]);
 
-        return MistralClient::generateClient($client,$this->configResolver->getParameter('connector_mistral.mistral.api_key'));
+        if(is_a($this->clientClassname, AiClientInterface::class, true) === false) {
+            throw new \RuntimeException(sprintf('The class "%s" must implement the interface "%s".', $this->clientClassname, AiClientInterface::class));
+        }
+
+        return $this->clientClassname::generateClient($client,$this->configResolver->getParameter('connector_mistral.mistral.api_key'));
     }
 }
