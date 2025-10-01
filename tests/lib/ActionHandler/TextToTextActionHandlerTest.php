@@ -37,8 +37,6 @@ final class TextToTextActionHandlerTest extends AbstractActionHandlerTest
 {
     private TextToTextActionHandler $handler;
 
-    private AiClientInterface $client;
-
     protected function setUp(): void
     {
         $actionTypeRegistry = new ActionTypeRegistry(
@@ -51,16 +49,12 @@ final class TextToTextActionHandlerTest extends AbstractActionHandlerTest
             ]
         );
 
-        $this->client = $this->createMock(AiClientInterface::class);
-        $this->client->method('generate')->willReturnCallback([
-            'candidates' => [
+        $client = $this->createMock(AiClientInterface::class);
+        $client->method('generate')->willReturn([
+            'choices' => [
                 [
-                    'content' => [
-                        'parts' => [
-                            [
-                                'text' => 'foo',
-                            ],
-                        ],
+                    'message' => [
+                        'content' => 'foo',
                     ],
                 ],
             ],
@@ -69,7 +63,7 @@ final class TextToTextActionHandlerTest extends AbstractActionHandlerTest
         $clientProvider = $this->createMock(ClientProviderInterface::class);
         $clientProvider
             ->method('getClient')
-            ->willReturn($this->client);
+            ->willReturn($client);
 
         $languageService = $this->createMock(LanguageService::class);
         $languageService
