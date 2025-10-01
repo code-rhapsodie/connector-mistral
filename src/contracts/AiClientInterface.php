@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace CodeRhapsodie\Contracts\ConnectorMistral;
 
+use Symfony\Contracts\HttpClient\HttpClientInterface;
+
 interface AiClientInterface
 {
     /**
@@ -11,4 +13,6 @@ interface AiClientInterface
      * @return array<array-key, mixed>
      */
     public function generate(array $prompts, array $config): array;
+
+    public static function generateClient(HttpClientInterface $client, string $token): self;
 }
