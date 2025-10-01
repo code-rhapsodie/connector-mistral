@@ -5,8 +5,8 @@ declare(strict_types=1);
 
 namespace CodeRhapsodie\ConnectorMistral;
 
-use CodeRhapsodie\Bundle\ConnectorMistral\Client\AiClientInterface;
 use CodeRhapsodie\Bundle\ConnectorMistral\Client\MistralClient;
+use CodeRhapsodie\Contracts\ConnectorMistral\AiClientInterface;
 use CodeRhapsodie\Contracts\ConnectorMistral\ClientProviderInterface;
 use Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;

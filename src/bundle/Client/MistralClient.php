@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace CodeRhapsodie\Bundle\ConnectorMistral\Client;
 
 
+use CodeRhapsodie\Contracts\ConnectorMistral\AiClientInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 final class MistralClient implements AiClientInterface

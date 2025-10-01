@@ -5,7 +5,7 @@ declare(strict_types=1);
 
 namespace CodeRhapsodie\ConnectorMistral\ActionHandler;
 
-use CodeRhapsodie\Bundle\ConnectorMistral\Client\AiClientInterface;
+use CodeRhapsodie\Contracts\ConnectorMistral\AiClientInterface;
 use CodeRhapsodie\Contracts\ConnectorMistral\ClientProviderInterface;
 use Ibexa\Contracts\ConnectorAi\Action\ActionHandlerInterface;
 use Ibexa\Contracts\ConnectorAi\Action\LLMBaseActionTypeInterface;

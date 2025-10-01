@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace CodeRhapsodie\Bundle\ConnectorMistral\Client;
+namespace CodeRhapsodie\Contracts\ConnectorMistral;
 
 interface AiClientInterface
 {
