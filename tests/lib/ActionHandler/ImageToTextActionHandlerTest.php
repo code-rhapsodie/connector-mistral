@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace CodeRhapsodie\Tests\ConnectorMistral\ActionHandler;
 
-use CodeRhapsodie\Bundle\ConnectorMistral\Client\AiClientInterface;
 use CodeRhapsodie\ConnectorMistral\ActionHandler\ImageToTextActionHandler;
+use CodeRhapsodie\Contracts\ConnectorMistral\AiClientInterface;
 use CodeRhapsodie\Contracts\ConnectorMistral\ClientProviderInterface;
 use Ibexa\ConnectorAi\ActionContextFactory;
 use Ibexa\ConnectorAi\ActionTypeRegistry;
